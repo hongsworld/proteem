@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140207024552) do
+ActiveRecord::Schema.define(:version => 20140211215654) do
+
+  create_table "menus", :force => true do |t|
+    t.string   "menu"
+    t.string   "price"
+    t.string   "img_url"
+    t.integer  "post_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "posts", :force => true do |t|
     t.string   "name"
@@ -20,12 +29,6 @@ ActiveRecord::Schema.define(:version => 20140207024552) do
     t.integer  "location"
     t.string   "address"
     t.string   "phone"
-    t.string   "menu_1"
-    t.integer  "cost_1"
-    t.string   "menu_2"
-    t.integer  "cost_2"
-    t.string   "menu_3"
-    t.integer  "cost_3"
     t.string   "feature"
     t.boolean  "delete_flag",     :default => false
     t.string   "img_url"
