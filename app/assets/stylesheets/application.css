@@ -11,3 +11,32 @@
  *= require_self
  *= require_tree .
  */
+@font-face{
+  font-family:'NanumBarunGothic';
+  font-style:normal;
+  src:url('/NanumBarunGothic.eot');
+  src:url('/NanumBarunGothic.eot')format('embedded-opentype'),
+  url('/NanumBarunGothic.woff')format('woff');
+}
+p{
+  font-family:'NanumBarunGothic';
+}
+span{
+  font-family:'NanumBarunGothic';
+}
+pre{
+  font-family:'NanumBarunGothic';
+}
+a{
+  font-family:'NanumBarunGothic';
+}
+html{
+  font-family:'NanumBarunGothic';
+}
+body{
+  font-family:'NanumBarunGothic';
+}
+div{
+  font-family:'NanumBarunGothic';
+
+}
