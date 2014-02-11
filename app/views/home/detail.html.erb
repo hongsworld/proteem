@@ -27,49 +27,56 @@
       .border-right{
         border-right:1px solid;
       }
+      div.each_item{
+        border-radius:5px; background-color:#fdfeff; height:100px;
+        border:2px outset;
+      }
+      div.pic{
+        float:left;
+        height:100%;
+        border-radius:2px;
+        width:100px;
+        border:1px outset;
+      }
+      div.txt{
+        padding:5px;
+        float:left;
+        height:100%;
+        width:calc(100% - 100px);
+      }
+      div.jumbotron2{
+        background-color: #f1f1f1;
+        border-radius: 10px; 
+        margin:0 auto; 
+        padding:20px;
+        border:2px outset;
+        max-width:860px;
+      }
+      p.name{
+        text-align:left;
+        font-size:1.3em;
+      }
+      p.description{
+        text-align:left;
+        font-size:0.8em;
+      }
+      div.button{
+        position:relative;
+        float:right;
+        line-height:600%;
+      }
+      div.content{
+        float:left;
+        width:calc(100% - 68px);
+      }
     </style>
+  <div class="wrap">
+    <div class="jumbotron2" >
 
-    <div class="jumbotron" style="
-        background-color:  #C9C9C9;
-        border-radius: 10px; ">
-        <h1 >아산시 지역알리미</h1>
-        <p class="lead" >아산시 스마트스쿨내 웹동아리인 ProTeen이 만든 첫 학생 지역알리미 서비스입니다.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">더보기</a></p>
-      </div>
-      <div class ="col-xs-12 col-md-6" style="border:1px solid; border-radius:10px;">
-        <div class="row">
-              <div class="col-xs-6 border-right border-bottom " style="overflow:hidden; display:table;" >
-                <h4>식당/카페</h4>
-                <p>식당이랑 카페입니다.  </p>
-                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-              </div>
-              <div class="col-xs-6 border-bottom "style="overflow:hidden; display:table;">
-                <h4>문화</h4>
-                <p>피씨방 노래방입니다.  </p>
-                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-              </div>
-        </div><!--row-->
-        <div class="row">
-              
-              <div class="col-xs-6 border-right "style="overflow:hidden; display:table;" style="
-              ">
-                <h4>체육시설</h4>
-                <p>체육시설입니다.  </p>
-                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-              </div>
-              <div class="col-xs-6 "style="overflow:hidden; display:table;" style="
-              ">
-                <h4>기타</h4>
-                <p>기타입니다.  </p>
-                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-              </div>
-            </div><!-- row --!>
-          </div>
-
+      <iframe src="http://naver.com" width="300" height="300" style=" zoom:100%;"></iframe>
         <!-- 여기서부터 지도--!>
-
+<!--
         <style>v\:* { behavior: url(#default#VML); }</style>
-        <!-- prevent IE6 flickering -->
         <script type="text/javascript">
                 try {document.execCommand('BackgroundImageCache', false, true);} catch(e) {}
         </script>
@@ -99,6 +106,8 @@
           </script>
 
 
+
+
         <div id = "testMap" class="hidden-md hidden-sm hidden-lg col-xs-12" style="border:1px solid #000;"></div>
          <script type="text/javascript">
                                 var oPoint = new nhn.api.map.LatLng(37.5010226, 127.0396037);
@@ -120,3 +129,8 @@
                                 mapZoom.setPosition({right:40, bottom:40}); // - 줌 컨트롤 위치 지정
                                 oMap.addControl(mapZoom); // - 줌 컨트롤 추가.
           </script>
+
+          -->
+
+      </div>
+    </div>
