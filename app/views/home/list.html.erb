@@ -54,7 +54,7 @@
       }
       p.name{
         text-align:left;
-        font-size:1.3em;
+        font-size:1.0em;
       }
       p.description{
         text-align:left;
@@ -62,32 +62,60 @@
       }
       div.button{
         position:relative;
-        float:right;
-        line-height:600%;
+        height:calc(100% - 2em);
+        overflow:hidden;
       }
       div.content{
+        width:100%;
+        height:2em;
+      }
+      img.pic{
+        width:100%;
+        height:100%;
+        border-radius:8px;
+      }
+      div.right_btn{
+        float:right;
+        position:relative;
+        width:38px;
+      }
+      div.name{
         float:left;
-        width:calc(100% - 68px);
+        position:relative;
+        width:calc(100% - 38px);
+        overflow:hidden;
       }
     </style>
-  <div class="wrap">
+    <div class="wrap">
+      <select>
+      </select>
     <div class="jumbotron2" >
+
+
+      <%@post.each do |p|%>
 
         <div class="each_item">
           <div class="pic">
-            사진사진:
+            
+            <a src="/home/detail?<%=p.id%>"><img class="pic" src="<%=p.img_url%>"></a>
           </div>
           <div class="txt">
             <div class="content">
-            <p class="name">제목</p>
-            <p class="description"> 설명설명 </p>
+              <div class = "name">
+                <p class="name"><%=p.name%></p>
+              </div>
+              <div class = "right_btn" >
+                <a class="btn btn-mini active " style="padding:3px; align:right;font-size: 0.8em;" href="/home/detail?<%=p.id%>" role="button">더보기</a>
+              </div>
             </div>
+            <div style="clear:both;"> </div>
             <div class="button">
-              <a class="btn btn-mini active " href="#" role="button">더보기</a>
+              <p class="description"> <%=p.feature%> </p>
             </div>
           </div>
         </div>
 
+      <%end%>
 
-      </div>
     </div>
+  </div>

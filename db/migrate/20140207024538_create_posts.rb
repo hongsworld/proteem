@@ -14,7 +14,12 @@ class CreatePosts < ActiveRecord::Migration
       t.string "menu_3"
       t.integer "cost_3"
       t.string "feature" # 특징
-      t.boolean "delete_flag"
+      t.boolean "delete_flag" , :default => false
+      t.string "img_url"
+      t.string "dummy1"
+      t.string "dummy2"
+      t.string "dummy3"
+      t.string "dummy4"
       t.timestamps
     end
   end

@@ -27,9 +27,14 @@ ActiveRecord::Schema.define(:version => 20140207024552) do
     t.string   "menu_3"
     t.integer  "cost_3"
     t.string   "feature"
-    t.boolean  "delete_flag"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.boolean  "delete_flag",     :default => false
+    t.string   "img_url"
+    t.string   "dummy1"
+    t.string   "dummy2"
+    t.string   "dummy3"
+    t.string   "dummy4"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
   end
 
   create_table "replies", :force => true do |t|
