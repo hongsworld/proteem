@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+  </head>
+
+  <body>
+    <style>
+      .border{
+        border:1px solid;
+      }
+      .border-top{
+        border-top:1px solid;
+      }
+      .border-bottom{
+        border-bottom:1px solid;
+      }
+      .border-left{
+        border-left:1px solid;
+      }
+      .border-right{
+        border-right:1px solid;
+      }
+    </style>
+
+    <div class="jumbotron" style="
+        background-color:  #C9C9C9;
+        border-radius: 10px; ">
+        <h1 >아산시 지역알리미</h1>
+        <p class="lead" >아산시 스마트스쿨내 웹동아리인 ProTeen이 만든 첫 학생 지역알리미 서비스입니다.</p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">더보기</a></p>
+      </div>
+      <div class ="col-xs-6" style="border:1px solid; border-radius:10px;">
+        <div class="row">
+              <div class="col-xs-6 border-right border-bottom " >
+                <h4>식당/카페</h4>
+                <p>식당이랑 카페입니다.  </p>
+                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+              </div>
+              <div class="col-xs-6 border-bottom " style="
+              ">
+                <h4>문화</h4>
+                <p>피씨방 노래방입니다.  </p>
+                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+              </div>
+        </div><!--row-->
+        <div class="row">
+              
+              <div class="col-xs-6 border-right " style="
+              ">
+                <h4>체육시설</h4>
+                <p>체육시설입니다.  </p>
+                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+              </div>
+              <div class="col-xs-6 " style="
+              ">
+                <h4>기타</h4>
+                <p>기타입니다.  </p>
+                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+              </div>
+            </div><!-- row --!>
+          </div>
+
+        <!-- 여기서부터 지도--!>
+
+        <style>v\:* { behavior: url(#default#VML); }</style>
+        <!-- prevent IE6 flickering -->
+        <script type="text/javascript">
+                try {document.execCommand('BackgroundImageCache', false, true);} catch(e) {}
+        </script>
+        <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=324d4c6922a651b7bb4d69c137266f5"></script> 
+          
+
+
+        <div id = "testMap" class="col-xs-6" style="border:1px solid #000;"></div>
+         <script type="text/javascript">
+                                var oPoint = new nhn.api.map.LatLng(37.5010226, 127.0396037);
+                                nhn.api.map.setDefaultPoint('LatLng');
+                                oMap = new nhn.api.map.Map('testMap', {
+                                                        point : oPoint,
+                                                        zoom : 10, // - 초기 줌 레벨은 10으로 둔다.
+                                                        enableWheelZoom : true,
+                                                        enableDragPan : true,
+                                                        enableDblClickZoom : false,
+                                                        mapMode : 0,
+                                                        activateTrafficMap : false,
+                                                        activateBicycleMap : false,
+                                                        minMaxLevel : [ 1, 14 ],
+                                                        size : new nhn.api.map.Size(500, 400)
+                                });
+
+                                var mapZoom = new nhn.api.map.ZoomControl(); // - 줌 컨트롤 선언
+                                mapZoom.setPosition({right:40, bottom:40}); // - 줌 컨트롤 위치 지정
+                                oMap.addControl(mapZoom); // - 줌 컨트롤 추가.
+          </script>
+
