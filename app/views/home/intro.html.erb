@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,6 +14,24 @@
 
 
     <style>
+      div.wrap{
+        position:absolute;
+        left:0px;
+        width:100%;
+        height:calc(100% - 42px);
+      }
+      div.jumbotron2{
+        position:relative;
+        width:100%;
+        height:100%;
+        background-color: #f1f1f1;
+        border-radius: 10px; 
+        margin:0 auto; 
+        padding:20px;
+        border:2px outset;
+        max-width:860px;
+        overflow:scroll;
+      }
     .list0 { clear:both; position: relative; z-index: 1; top: -35px; left: -5px; } 
     .list1 { clear:both; position: absolute; z-index: 1; top: 260px; left: 20px; }
     .list2 { clear:both; position: absolute; z-index: 2; top: 215px; left: 52px; } 
@@ -24,11 +40,6 @@
     .list5 { clear:both; position: absolute; z-index: 5; top: 154px; left: 35px; } 
     .list6 { clear:both; position: absolute; z-index: 6; top: 074px; left: 63px; } 
 
-     @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-
-    *{
-      font-family: "NanumGothic";
-    }
       .border{
         border:5px groove;
       }
@@ -71,42 +82,40 @@
     <img src='http://postfiles16.naver.net/20140208_255/juhogi0082_13918676685735u77q_PNG/%BF%C2%BE%E76%B5%BF2.png?type=w2' alt='' border='0' name='mus6' class='list6' >
   </a>
 </div>
-
-    <div class="jumbotron" style="
-        background-color:  #C9C9C9;
-        border-radius: 10px; ">
+  <div class = "wrap">
+    <div class="jumbotron2" >
         <h1>아산시 지역알리미</h1>
         <p class="lead" >아산시 스마트스쿨내 웹동아리인 ProTeen이 만든 첫 학생 지역알리미 서비스입니다.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">더보기</a></p>
-      </div>
-      <div class ="col-xs-12 col-md-6" style="border:7px groove; border-radius:10px; margin: 0 0 20px 0">
+        <p style="text-align:right;"><a class="btn btn-mini btn-info" href="#" role="button">더보기</a></p>
+
+      <div class ="col-xs-12 " style="border:7px groove; border-radius:10px; margin: 0 0 20px 0">
         <div class="row">
-              <div class="col-xs-6 border-right border-bottom 
-                         " style= "height: 201.11111116409302px;  " >
+              <div class="col-xs-6 border-right border-bottom ">
                 <h4>식당/카페</h4>
                 <p>식당이랑 카페입니다.  </p>
-                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+                <p style="text-align:right;"><a class="btn btn-default" href="/home/list/1" role="button">더보기 »</a></p>
               </div>
-              <div class="col-xs-6 border-bottom" style="height: 201.11111116409302px;
-              ">
+              <div class="col-xs-6 border-bottom">
                 <h4>문화</h4>
                 <p>피씨방 노래방입니다.  </p>
-                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+                <p style="text-align:right;"><a class="btn btn-default" href="/home/list/2" role="button">더보기 »</a></p>
               </div>
         </div><!--row-->
         <div class="row">
               
-              <div class="col-xs-6 border-right" style="height: 201.11111116409302px;"> 
+              <div class="col-xs-6 border-right" >
             
                 <h4>체육시설</h4>
                 <p>체육시설입니다.  </p>
-                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+                <p style="text-align:right;"><a class="btn btn-default" href="/home/list/3" role="button">더보기 »</a></p>
               </div>
-              <div class="col-xs-6 " style="height: 201.11111116409302px;" >
+              <div class="col-xs-6 ">
                 <h4>기타</h4>
                 <p>기타입니다.  </p>
-                <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+                <p style="text-align:right;"><a class="btn btn-default" href="/home/list/4" role="button">더보기 »</a></p>
               </div>
             </div><!-- row --!>
           </div>
 
+      </div>
+    </div>

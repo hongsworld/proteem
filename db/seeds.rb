@@ -24,7 +24,7 @@ d_c=["양식" , "PC방", "노래방", "등등"]
    
    5일부터 10일까지 미국 휴스턴에서 개최된 이번 대회에서 좋은 성적을 거둔 이 팀이 화제가 되고 있는 이유는"
    p.delete_flag = false
-   p.img_url= "/img/#{rand(1..7)}.jpg"
+   p.img_url= "/img/#{rand(10..19)}.jpg"
    p.save
 
 
