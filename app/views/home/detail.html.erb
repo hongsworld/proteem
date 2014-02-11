@@ -69,68 +69,15 @@
         float:left;
         width:calc(100% - 68px);
       }
+      div.map{
+        width:90%;
+        height:30%;
+        border:outset;
+      }
     </style>
   <div class="wrap">
     <div class="jumbotron2" >
-
-      <iframe src="http://naver.com" width="300" height="300" style=" zoom:100%;"></iframe>
-        <!-- 여기서부터 지도--!>
-<!--
-        <style>v\:* { behavior: url(#default#VML); }</style>
-        <script type="text/javascript">
-                try {document.execCommand('BackgroundImageCache', false, true);} catch(e) {}
-        </script>
-        <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=324d4c6922a651b7bb4d69c137266f5"></script> 
-          
-
-        <div id = "testMap2" class="col-md-6 hidden-xs hidden-sm" style="border:1px solid #000;"></div>
-         <script type="text/javascript">
-                                var oPoint = new nhn.api.map.LatLng(37.5010226, 127.0396037);
-                                nhn.api.map.setDefaultPoint('LatLng');
-                                oMap = new nhn.api.map.Map('testMap2', {
-                                                        point : oPoint,
-                                                        zoom : 10, // - 초기 줌 레벨은 10으로 둔다.
-                                                        enableWheelZoom : true,
-                                                        enableDragPan : true,
-                                                        enableDblClickZoom : false,
-                                                        mapMode : 0,
-                                                        activateTrafficMap : false,
-                                                        activateBicycleMap : false,
-                                                        minMaxLevel : [ 1, 14 ],
-                                                        size : new nhn.api.map.Size(400, 400)
-                                });
-
-                                var mapZoom = new nhn.api.map.ZoomControl(); // - 줌 컨트롤 선언
-                                mapZoom.setPosition({right:40, bottom:40}); // - 줌 컨트롤 위치 지정
-                                oMap.addControl(mapZoom); // - 줌 컨트롤 추가.
-          </script>
-
-
-
-
-        <div id = "testMap" class="hidden-md hidden-sm hidden-lg col-xs-12" style="border:1px solid #000;"></div>
-         <script type="text/javascript">
-                                var oPoint = new nhn.api.map.LatLng(37.5010226, 127.0396037);
-                                nhn.api.map.setDefaultPoint('LatLng');
-                                oMap = new nhn.api.map.Map('testMap', {
-                                                        point : oPoint,
-                                                        zoom : 10, // - 초기 줌 레벨은 10으로 둔다.
-                                                        enableWheelZoom : true,
-                                                        enableDragPan : true,
-                                                        enableDblClickZoom : false,
-                                                        mapMode : 0,
-                                                        activateTrafficMap : false,
-                                                        activateBicycleMap : false,
-                                                        minMaxLevel : [ 1, 14 ],
-                                                        size : new nhn.api.map.Size(300, 300)
-                                });
-
-                                var mapZoom = new nhn.api.map.ZoomControl(); // - 줌 컨트롤 선언
-                                mapZoom.setPosition({right:40, bottom:40}); // - 줌 컨트롤 위치 지정
-                                oMap.addControl(mapZoom); // - 줌 컨트롤 추가.
-          </script>
-
-          -->
-
+      <div class = "map">
       </div>
     </div>
+  </div>
