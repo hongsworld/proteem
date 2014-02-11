@@ -28,12 +28,18 @@ d_c=["양식" , "PC방", "노래방", "등등"]
    p.save
 
 
-   a = rand(1..3)
-   0.upto(a) do |m|
+   a = rand(1..2)
+   1.upto(a) do |m|
      menu = p.menus.new
      menu.menu = ["양장피","불닭볶음면+삼각김밥", "너구리","피자", "치킨"].shuffle.first
      menu.price = [1000, 5000, 10000, 15000, 20000].shuffle.first
      menu.img_url= "/img/#{rand(1..7)}.jpg"
+     menu.save
+   end
+   1.upto(a) do |m|
+     menu = p.menus.new
+     menu.menu = ["양장피","불닭볶음면+삼각김밥", "너구리","피자", "치킨"].shuffle.first
+     menu.price = [1000, 5000, 10000, 15000, 20000].shuffle.first
      menu.save
    end
  end
