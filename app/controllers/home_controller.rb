@@ -1,10 +1,16 @@
 class HomeController < ApplicationController
   def intro
   end
+  def about
+  end
   def list
       category = params[:id]
     if category == "" or category.nil?
-      @post = Post.all
+      if params[:location] =="" or params[:location].nil?
+        @post = Post.all
+      else
+        @post = Post.where(:location => params[:location]).all
+      end
     else
       @post = Post.where(:category => category).all
     end

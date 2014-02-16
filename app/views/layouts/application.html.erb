@@ -29,6 +29,8 @@
        url('/fonts/NanumBarunGothic.woff') format('woff'),
        url('/fonts/NanumBarunGothic.ttf') format('truetype');
       }
+
+
 </style>
 
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -45,11 +47,10 @@
     <div class="container" >
       <div class="header" style="margin:0 auto; padding:0px 0 0 0; max-width:860px; width:100%;">
         <ul class="nav nav-pills pull-right">
-          <li class="active" style="width:60px;"><a style="padding:5px 7px 7px 9px;" href="#">Home</a></li>
-          <li><a style="padding:5px 7px 7px 9px;" href="#">About</a></li>
-          <li><a style="padding:5px 7px 7px 9px;" href="#">Contact</a></li>
+          <li id="home" class="active" style="width:60px;"><a style="padding:5px 7px 7px 9px;" href="/">Home</a></li>
+          <li id="about"><a style="padding:5px 7px 7px 9px;" href="/home/about">About</a></li>
         </ul>
-       <h4 class="text-muted" style ="color : #DD962B; " > <a href="/">ProTeen</a></h3>
+       <h4 class="text-muted" style ="color : #DD962B; " > <a href="/"><img src="/img/AsanApp.png" height=20px></a></h3>
       </div>
 
 <%= yield %>

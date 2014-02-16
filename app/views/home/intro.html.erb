@@ -10,8 +10,8 @@
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <!--
     <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css" />
     -->
+    <link rel="stylesheet" href="/animate.css" />
 
   </head>
 
@@ -20,10 +20,12 @@
 
     <style>
       *{
-        font-family: 'NaumBarunGothic'
+        font-family: 'NanumBarunGothic'
       }  
-      h4{
-        font-size: 50px;
+      h4.title{
+        font-size: 40px;
+        margin:40px 0 0 0;
+        text-align:center;
       }
 
       div.wrap{
@@ -36,7 +38,7 @@
         position:relative;
         width:100%;
         height:100%;
-        background-color: #f1f1f1;
+        background-color: #f2f5ec;
         border-radius: 10px; 
         margin:0 auto; 
         padding:20px;
@@ -44,6 +46,9 @@
         max-width:860px;
         overflow:scroll;
       }
+   .map:hover{
+    color: gray;
+   }
     .map { clear:both; position: relative;  width:100%; height: 100%; margin: 0 0 0 -118px ;} 
     .list1 { clear:both; position: absolute; z-index: 7; top: 20px; left: 300px; }
     .list2 { clear:both; position: absolute; z-index: 2; top: 113px; left: 303px; } 
@@ -67,92 +72,120 @@
       .border-right{
         border-right:5px groove;
       }
-      
+    div.preload{
+      -webkit-animation-duration: 0.5s;
+      -webkit-animation-delay:2s;
+      -webkit-animation-iteration-count: 1;
+    }
     </style>
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script>
 $(document).ready(function() {
+
+    $("#preload").addClass("animated fadeOut")
+    $("#preload").bind("touchend",function(){
+    $("#preload").css("z-index","0")
+
+      });
+    $("#preload").click(function(){
+    $("#preload").css("z-index","0")
+
+      });
     var lists = new Array();
         var jumbo = $("#jumbotron2").css("width") ;
         jumbo = parseFloat(jumbo.substr(0,jumbo.length-2));
   for (var i=1;i<7; i++){
           lists[$("#list"+i).attr('id')] = i
+                    $("#list" + i ).mouseover(function() {
+                      $(this).attr('src',"/images/"  + lists[$(this).attr('id')] + "dong2.png");
+                        });
+                    $("#list" + i ).mouseout(function() {
+                      $(this).attr('src',"/images/"  + lists[$(this).attr('id')] + "dong.png");
+                      });
 
-        $("#list" + i ).mouseover(function() {
-          $(this).attr('src',"/images/"  + lists[$(this).attr('id')] + "dong2.png");
-            });
-        $("#list" + i ).mouseout(function() {
-          $(this).attr('src',"/images/"  + lists[$(this).attr('id')] + "dong.png");
+          $("#list"+i).load(function() { 
+                    each_width = $("#list" +i).css("width").substr(0,$("#list" +i).css("width").length -2)
           });
-        each_width = $("#list" +i).css("width").substr(0,$("#list" +i).css("width").length -2)
-        each_top = $("#list" +i).css("top").substr(0,$("#list" +i).css("top").length -2)
-        each_left = $("#list" +i).css("left").substr(0,$("#list" +i).css("left").length -2)
-        $("#list" + i).css("width", parseFloat(each_width) *  jumbo/486 );
-        $("#list" + i).css("left", parseFloat(each_left) * jumbo/486 );
-        $("#list" + i).css("top", parseFloat(each_top) * jumbo/486 );
+                    each_top = $("#list" +i).css("top").substr(0,$("#list" +i).css("top").length -2)
+                    each_left = $("#list" +i).css("left").substr(0,$("#list" +i).css("left").length -2)
+                    $("#list" + i).css("width", parseFloat(each_width) *  jumbo/486 );
+                    $("#list" + i).css("left", parseFloat(each_left) * jumbo/486 );
+                    $("#list" + i).css("top", parseFloat(each_top) * jumbo/486 );
     }
     left = $("#list5").css("left")
     $("#map").css("margin","0 0 0 calc(-" + left + " - 20px)")
 });
     </script>
-    
+   <div id = "preload" class = "preload" style="position:absolute; width:100%; height:100%; background-color:white; z-index:100; left:0px; font-size:50px; font-family:NanumBarunGothic">
+   <center>
+<div style="top:30%;">
+    <img src="/img/onyang.png" width="100%"></img>
+<br>
+<br>
+    <img src="/img/AsanApp.png" width="100%"></img>
+</div>
+   </center>
+   </div>
   <div class = "wrap" >
-    <div class="jumbotron2" id= "jumbotron2"; style="background-color:#FFFABD">
-        <h1 style="margin:0px;">아산시 지역알리미</h1>
+    <div class="jumbotron2" id= "jumbotron2"; style="background-color:#F1F1F1">
+        <h1 style="margin:0px;">AsanApp</h1>
+        <br>
         <p class="lead" style="margin:0px; ">아산시 스마트스쿨내 웹동아리인 ProTeen이 만든 첫 학생 지역알리미 서비스입니다.</p>
-        <p style="text-align:right;"><a class="btn btn-mini btn-info" href="#" role="button">더보기</a></p>
-
-      <div class ="col-xs-12 " style="border:7px groove; border-radius:10px; margin: 0 ;">
+        <br>     
+      <div class ="col-xs-12 " style="border:7px groove; border-radius:10px; margin: 0 ; position:center ">
         <div class="row">
-              <div class="col-xs-6 border-right border-bottom"style="background-color: #FFE786">
-                <h4>식당/카페</h4>
-              
-                <p style="text-align:right;"><a class="btn btn-default" href="/home/list/1" role="button">더보기 »</a></p>
+              <div class="col-xs-6 border-right border-bottom"style=" height:174px;background-color: #F3E3C6; text-align:center;" >
+              <a href='/home/list/1'>
+              <div style="width:100%; max-width:186px; height:100%; background-image:url('/img/eat.png'); background-repeat:no-repeat; background-position:center center; background-size:100% auto; align:center; position:relative"></div>
+              </a>
               </div>
-              <div class="col-xs-6 border-bottom"style="background-color: #FF8C8F">
-                <h4>문화</h4>
-                
-                <p style="text-align:right;"><a class="btn btn-default" href="/home/list/2" role="button">더보기 »</a></p>
+              <div class="col-xs-6 border-bottom"style="background-color: #D9B687; height:174px;">
+                <a href='/home/list/2'>
+              <div style="width:100%; max-width:186px; height:100%; background-image:url('/img/active.png'); background-repeat:no-repeat; background-position:center center; background-size:100% auto; align:center; position:relative"></div>
+              </a>
               </div>
-        </div><!--row-->
+              </div><!--row-->
         <div class="row">
               
-              <div class="col-xs-6 border-right"style="background-color: #C3FF96">
-            
-                <h4>체육시설</h4>
-                
-                <p style="text-align:right;"><a class="btn btn-default" href="/home/list/3" role="button">더보기 »</a></p>
+              <div class="col-xs-6 border-right"style="background-color: #8C7057; height:174px;">
+              <a href='/home/list/3'>
+              <div style="width:100%; max-width:186px; height:100%; background-image:url('/img/exe.png'); background-repeat:no-repeat; background-position:center center; background-size:100% auto; align:center; position:relative"></div>
+              </a>
               </div>
-              <div class="col-xs-6 "style="background-color: #A2C6FF">
-                <h4>기타</h4>
-               
-                <p style="text-align:right;"><a class="btn btn-default" href="/home/list/4" role="button">더보기 »</a></p>
+              <div class="col-xs-6 "style="background-color: #BD7A5E; height:174px;">
+                <a href='/home/list/4'>
+              <div style="width:100%; max-width:186px; height:100%; background-image:url('/img/ETC.png'); background-repeat:no-repeat; background-position:center center; background-size:100% auto; align:center; position:relative"></div>
+              </a>
               </div>
             </div><!-- row -->
           </div>
+          <br>
+          <br>
         <div class="col-xs-12">
+          <br>
+          <br>
           <div class="map" id = "map">
-             <a href='./bbs/board.php?bo_table=m101&sca=전남' >
+             <a href='/home/list?location=1' >
              <img src='/images/1dong.png' alt='' border='0' id='list1' class='list1' >
              </a>
   
-               <a href='./bbs/board.php?bo_table=m101&sca=전북'>
+               <a href='/home/list?location=2'>
               <img src='/images/2dong.png' alt='' border='0' id='list2' class='list2' >
                 </a>
   
-              <a href='./bbs/board.php?bo_table=m101&sca=경남'>
+              <a href='/home/list?location=3'>
               <img src='/images/3dong.png' alt='' border='0' id='list3' class='list3' >
                 </a>
 
-              <a href='./bbs/board.php?bo_table=m101&sca=강원'>
+              <a href='/home/list?location=4'>
               <img src='/images/4dong.png' alt='' border='0' id='list4' class='list4' >
               </a>
 
-              <a href='./bbs/board.php?bo_table=m101&sca=충남'>
+              <a href='/home/list?location=5'>
                 <img src='/images/5dong.png' alt='' border='0' id='list5' class='list5' >
               </a>
 
-              <a href='./bbs/board.php?bo_table=m101&sca=경기'>
+              <a href='/home/list?location=6'>
                 <img src='/images/6dong.png' alt='' border='0' id='list6' class='list6' >
               </a>
           </div>
