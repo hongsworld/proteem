@@ -8,6 +8,150 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #
 #
+#
+#
+
+#encoding: utf-8
+require 'csv'
+
+2.upto(6) do |dong|
+  b = 1
+  CSV.foreach("#{dong}.csv") do |row|
+    a = 1
+    puts "#{b} 행"
+    if b==1
+      b+=1
+      "끝끝끝"
+    else
+      p = Post.new
+      row.each do |x|
+        puts "#{a} 열"
+        puts x
+        case a
+        when 1
+          p.category = x
+          p.save
+        when 2
+          if !x.nil?
+            p = Post.last
+            p.detail_category =x
+            p.save
+          end
+        when 3
+          if !x.nil?
+            p = Post.last
+            p.location = x
+            p.save
+          end
+        when 4
+          p = Post.last
+          p.name = x
+          p.save
+        when 5
+          if !x.nil?
+            p = Post.last
+            p.address = x
+            p.save
+          end
+        when 6
+          if !x.nil?
+            p = Post.last
+            p.phone = x
+            p.save
+          end
+        when 7
+          if !x.nil?
+            p = Post.last
+            m = p.menus.new
+            m.menu = x
+            puts "오오오오"
+            m.save
+          end
+        when 8
+          if !x.nil?
+            puts "통과되긴했는데"
+            puts m
+            m = Menu.last
+            m.price = x
+            m.save
+          end
+        when 9
+          if !x.nil?
+            p = Post.last
+            m = p.menus.new
+            m.menu = x
+            m.save
+          end
+        when 10
+          if !x.nil?
+            m = Menu.last
+            m.price = x
+            m.save
+          end
+        when 11
+          if !x.nil?
+            p = Post.last
+            m = p.menus.new
+            m.menu = x
+            m.save
+          end
+        when 12
+          if !x.nil?
+            m = Menu.last
+            m.price = x
+            m.save
+          end
+        when 13
+          if !x.nil?
+            p = Post.last
+            p.feature = x
+            p.save
+          end
+        when 14
+          if !x.nil?
+            p = Post.last
+            p.img_url = x
+            m = p.menus.first
+            if !m.nil?
+              m.img_url = x
+              m.save
+            end
+            p.save
+          end
+        when 15
+          if !x.nil?
+            p = Post.last
+            p.lat = x
+            p.save
+          end
+        when 16
+          if !x.nil?
+            p = Post.last
+            p.lng = x
+            p.save
+          end
+        end
+        a+=1
+      end
+      b+=1
+    end
+  end
+end
+
+
+p = Post.all
+p.each do |x|
+  randomizing = rand(0..3)
+    0.upto(randomizing) do |u|
+    r = x.replies.new
+    r.name = "홍길동"
+    r.content = "쓸만하네요"
+    r.delete_flag = false
+    r.save
+  end
+end
+
+
 aa = ["순이네 쌀 찐빵, 만두", "달콤한 닭강정", "삼색호떡", "원주통닭", "옛날손칼국수"]
 b = %w[만두 닭강정 호떡 치킨 칼국수]
 c = [1,1,1,1,1]
@@ -46,8 +190,9 @@ fea = ["온양온천시장 내에 위치하여 특유의 따뜻한 정이 느껴
        menu.img_url= "/img/seum/#{x + 1}.jpg"
      elsif m == 2
        menu.img_url= "/img/seum/#{x + 1}1.jpg"
-     end 
+     end
      menu.save
    end
 end
+
 
