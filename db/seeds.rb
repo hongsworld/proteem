@@ -110,10 +110,10 @@ require 'csv'
         when 14
           if !x.nil?
             p = Post.last
-            p.img_url = x
+            p.img_url = "/img/#{x}"
             m = p.menus.first
             if !m.nil?
-              m.img_url = x
+              m.img_url = "/img/#{x}"
               m.save
             end
             p.save
@@ -138,18 +138,6 @@ require 'csv'
   end
 end
 
-
-p = Post.all
-p.each do |x|
-  randomizing = rand(0..3)
-    0.upto(randomizing) do |u|
-    r = x.replies.new
-    r.name = "홍길동"
-    r.content = "쓸만하네요"
-    r.delete_flag = false
-    r.save
-  end
-end
 
 
 aa = ["순이네 쌀 찐빵, 만두", "달콤한 닭강정", "삼색호떡", "원주통닭", "옛날손칼국수"]
@@ -179,6 +167,7 @@ fea = ["온양온천시장 내에 위치하여 특유의 따뜻한 정이 느껴
    p.feature = fea[x]
    p.delete_flag = false
    p.img_url= "/img/seum/#{x + 1}.jpg"
+   p.dummy2 = "seum"
    p.save
 
    a = [2,2,2,1,3]
@@ -187,7 +176,7 @@ fea = ["온양온천시장 내에 위치하여 특유의 따뜻한 정이 느껴
      menu.menu = [["고기만두", "찐빵"],["닭강정(대)","닭강정(중)"],["호떡","튀김"],["후라이드 치킨"],["옛날 칼국수","해물칼국수","김치전"]][x][m-1]
      menu.price = [[3000,3000],[12000,8000],[2000,2000],[14000],[6000,7000]][x][m-1]
      if m == 1
-       menu.img_url= "/img/seum/#{x + 1}.jpg"
+       menu.img_url= "/img/seum#{x + 1}.jpg"
      elsif m == 2
        menu.img_url= "/img/seum/#{x + 1}1.jpg"
      end

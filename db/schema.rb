@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(:version => 20140211215654) do
     t.string   "dummy2"
     t.string   "dummy3"
     t.string   "dummy4"
+    t.float    "lng"
+    t.float    "lat"
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
   end

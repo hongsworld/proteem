@@ -17,18 +17,6 @@
 			<link rel="stylesheet" href="css/style-wide.css" />
 			<link rel="stylesheet" href="css/bootstrap.css" />
 		</noscript>
-
-<!-- 웹폰트 불러오는 스크립트 -->
-		<script src="http://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
-		<script>
-		  WebFont.load({
-		    custom: {
-		      families: ['Nanum Pen Script'],
-		      urls: ['http://fonts.googleapis.com/earlyaccess/nanumpenscript.css']
-		    }
-		  });
-		</script>
-<!-- 웹폰트 불러오는 스크립트 -->
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
 	</head>
@@ -36,13 +24,12 @@
 	<body>
 	
 	<style>
-/* 로딩이 느려서 웹폰트를 다른 방식으로 해결함.
 	@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 	@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
 	@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 	@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
 	@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
-*/
+
 	
 	#list1{ 
 		background-color: #F3E3C6;
@@ -82,16 +69,10 @@
     .list6 { clear:both; position: absolute; z-index: 6; top: 133px; left: 317px; } 
     #text{
     	font-family: Nanum Pen Script;
-    	font-size: 40px;
+    	font-size: 50px;
     	position: relative;
 		height:auto;
 		line-height:50px;
-    }
-    #AsanApp {
-    	text-align: center;
-    	position: relative;
-    	width: 80%;
-    	height: 80%;
     }
 	</style>
 		<!-- Header -->
@@ -141,29 +122,28 @@
 				<!-- Intro -->
 					<section id="top" class="one">
 						<div class="container">
-							<div calss="col-xs-12">
-							<br>
-									<div style="position:relative; width:100%; height:auto; text-align:center;">
-										<img style="position:relative; width:75%; max-width:500px; height:auto"src="/img/AsanApp.png">
-									</div>
-									
+
+							<header>
+								<br>
+								<img src="/img/AsanApp.png">
+							</header>
 							
-							<br>
-									<div style="position:relative; width:100%; height:auto; text-align:center;">
-										<img style="position:relative; width:80%; max-width:500px; height:auto;" src="/img/header.png" />
-									</div>
+							<article class="item" >
+										<a class="image full">
+										<img style="height:80%; width:80%;" src="/img/header.png" />
+										</a>
 							</article>
-							</div>
+
 
 						</div>
 					</section>
 					
 				<!-- Portfolio -->
 					<section id="portfolio" class="two">
-						<div class="container" style="position:relative; min-height:250px;">
+						<div class="container">
 					
 							
-							<div class="row" style="max-width:600px; position:absolute; margin:auto; top:0; left:0; right:0; bottom:0;">
+							<div class="row">
 								<div class="6u">
 									 <div class="col-xs-6" id="list1">
 						             	<a href='/home/list/1'>
@@ -235,12 +215,12 @@
 									<div class="6u"><input type="text" class="text" name="name" placeholder="Name" /></div>
 									<div class="6u"><input type="text" class="text" name="email" placeholder="Email" /></div>
 								</div>
-								<div class="row_fake">
+								<div class="row half">
 									<div class="12u">
 										<textarea name="message" placeholder="Message"></textarea>
 									</div>
 								</div>
-								<div class="row_fake">
+								<div class="row">
 									<div class="12u">
 										<a href="juhogi0082@daum.net" class="button submit">Send Message</a>
 									</div>

@@ -36,6 +36,7 @@
         border:2px outset;
       }
       div.pic{
+	position:relative;
         float:left;
         height:100%;
         border-radius:2px;
@@ -106,10 +107,10 @@
       <div style="position:relative;float:right; margin:-20px 0 0 0;">
         <select  name="go" size=1 onChange="window.open(value,'_self');"> 
          <option value="default">분류를 선택하세요</option> 
-         <option value="/home/list/1" >카페&베이커리</option> 
-         <option value="/home/list/2" >음식점</option> 
-         <option value="/home/list/3" >엔터테인먼트</option> 
-         <option value="/home/list/4" >기타</option> 
+         <option value="/home/list/1" >카페&음식점</option> 
+         <option value="/home/list/2" >엔터테인먼트</option> 
+         <option value="/home/list/3" >체육시설</option> 
+         <option value="/home/list/4" >미용/독서실/기타</option> 
         </select>
       </div>
 
@@ -119,7 +120,16 @@
         <div class="each_item">
           <div class="pic">
             
-            <a href="/home/detail/<%=p.id%>"><img class="pic" src="<%=p.img_url%>"></a>
+            <a href="/home/detail/<%=p.id%>"><img class="pic" src="
+
+
+<% if p.img_url.nil? %>
+	http://asanapp.com:3000/img/AsanApp.png
+" style="width:100%; height:auto; position:absolute; top:0; bottom:0; margin:auto;"></a>
+<% else %>
+	<%=p.img_url%>
+"></a>
+<% end %>
           </div>
           <div class="txt">
             <div class="content">

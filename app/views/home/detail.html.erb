@@ -126,10 +126,10 @@
       div.each_reply{
       }
     </style>
-    <script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=ce3f5ef17aaa0037c82070c97ca091462a9cc10d"></script>
+    <script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=e2010dde743408c0de9f9cbda6cef7e48f1903d0"></script>
     <script type="text/javascript">
       window.onload = function() {
-      position = new daum.maps.LatLng(36.7882167, 127.0102750)
+      position = new daum.maps.LatLng(<%=@post.lat%>, <%=@post.lng%>)
 
       var map = new daum.maps.Map(document.getElementById('map'), {
         center: position,
@@ -211,11 +211,13 @@
            <div class = "feature" style="font-family:NanumBarunGothic;">
              <%=@post.feature%>
            </div>
-           <div class = "feature" style="font-family:NanumBarunGothic; border-top:1px solid;  height:100px; background-image:url('/img/seum/seum.png'); background-size:  auto 100%; background-repeat:no-repeat; background-position:center center;">
-           </div>
-           <div class = "feature" style="font-family:NanumBarunGothic; text-align:center; font-weight:bold; font-size:9.5px;">
-           본 자료는 아산시 스마트스쿨 경제경영 동아리 '세움'에서 제공하였습니다.
-           </div>
+	   <% if @post.dummy2 == "seum"%>
+		   <div class = "feature" style="font-family:NanumBarunGothic; border-top:1px solid;  height:100px; background-image:url('/img/seum/seum.png'); background-size:  auto 100%; background-repeat:no-repeat; background-position:center center;">
+		   </div>
+		   <div class = "feature" style="font-family:NanumBarunGothic; text-align:center; font-weight:bold; font-size:9.5px;">
+			   본 자료는 아산시 스마트스쿨 경제경영 동아리 '세움'에서 제공하였습니다.
+		   </div>
+	   <% end%>
     
           <div class = "reply" style="padding:5px; background-color:#f1f1f1 ">
             <%if @post.replies.all.count == 0  %>
