@@ -9,9 +9,40 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
   </head>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49197694-1', 'asanapp.com');
+  ga('send', 'pageview');
+
+</script>
 
   <body>
     <style>
+
+p{
+  font-family:'NanumBarunGothic';
+}
+span{
+  font-family:'NanumBarunGothic';
+}
+pre{
+  font-family:'NanumBarunGothic';
+}
+a{
+}
+html{
+}
+body{
+  font-family:'NanumBarunGothic';
+}
+div{
+
+}
+
       .border{
         border:1px solid;
       }
@@ -126,26 +157,28 @@
       div.each_reply{
       }
     </style>
-    <script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=e2010dde743408c0de9f9cbda6cef7e48f1903d0"></script>
-    <script type="text/javascript">
-      window.onload = function() {
-      position = new daum.maps.LatLng(<%=@post.lat%>, <%=@post.lng%>)
+    <% if !@post.lat.nil?%>
+      <script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=e2010dde743408c0de9f9cbda6cef7e48f1903d0"></script>
+      <script type="text/javascript">
+        window.onload = function() {
+        position = new daum.maps.LatLng(<%=@post.lat%>, <%=@post.lng%>)
 
-      var map = new daum.maps.Map(document.getElementById('map'), {
-        center: position,
-        level: 4,
-        mapTypeId: daum.maps.MapTypeId.ROADMAP
-      });
-      var zoomControl = new daum.maps.ZoomControl()
-      map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
-      var marker = new daum.maps.Marker({
-        position: position
-      });
-      marker.setMap(map);
+        var map = new daum.maps.Map(document.getElementById('map'), {
+          center: position,
+          level: 4,
+          mapTypeId: daum.maps.MapTypeId.ROADMAP
+        });
+        var zoomControl = new daum.maps.ZoomControl()
+        map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
+        var marker = new daum.maps.Marker({
+          position: position
+        });
+        marker.setMap(map);
 
-      infowindow.open(map, marker, zoomcontrol);
-      };
-    </script>
+        infowindow.open(map, marker, zoomcontrol);
+        };
+      </script>
+    <% end %>
 
 
     
@@ -162,6 +195,12 @@
       </div>
       <div class = "detail_content">
         <div class = "map" id = "map">
+          <% if @post.lat.nil? %>
+            <div style="position:absolute; margin:auto; left:0;right:0;top:0;bottom:0;height:30px; text-align:center; font-size:30px;">
+            지도 좌표 정보가 없습니다
+          </div>
+          <% end %>
+
         </div>
         <div class = "detail_text">
           <div class = "simple_text">
@@ -237,7 +276,7 @@
                 <input class="col-xs-12" name="name" placeholder="필명을 입력해주세요">
                 <textarea class="col-xs-12" name="content" placeholder="댓글을 입력해주세요"></textarea>
                 <input type="hidden" value="<%=@post.id%>" name="post_id">
-                <input type="submit" style="width:80px;">
+                <input type="submit" style="width:80px;" value="등록">
 
               </form>
 
@@ -247,3 +286,6 @@
       </div>
     </div>
   </div>
+  <script>
+  $("div.wrap").css("height", $(window).height() - 42);
+  </script>

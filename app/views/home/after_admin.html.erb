@@ -1,0 +1,147 @@
+<style>
+div{
+  word-break:break-all;
+}
+div.clear{
+  clear:both; 
+}
+div.wrap{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+div.each_post{
+  position:relative;
+  width:100%;
+  height:200px;
+  border: 1px solid #333;
+  
+}
+
+div.each_colum{
+  position:relative;
+  float:left;
+  width:8%;
+  height:100%;
+  line-height:100%;
+  text-align:center;
+  overflow:hidden;
+}
+div.button{
+  position:relative;
+  float:left;
+  width:6%;
+  height:100%;
+  background-color:#f1cdcc;
+  overflow:hidden;
+}
+div.top{
+  position:relative;
+  width:100%;
+  height:100px;
+}
+div.top_colum{
+  position:relative;
+  float:left;
+  width:8%;
+  height:100%;
+  line-height:auto;
+  text-align:center;
+  overflow:hidden;
+}
+</style>
+
+<div class = "wrap">
+  <div class = "top">
+    <a href="/home/create_post" > 새로운상호 등록</a>
+  </div>
+  <div class = "top">
+    <div class = "top_colum" style="background-color:gray; width:2% !important;">
+      ID
+    </div>
+    <div class = "top_colum">
+      NAME
+    </div>
+    <div class = "top_colum" >
+      CATEGORY(1:먹고 마시기 2: 놀기 3: 운동시설 4:기타)
+    </div>
+    <div class = "top_colum">
+      Detail Category
+    </div>
+    <div class = "top_colum" >
+      Location (1,2,3,4,5,6 - 동)
+    </div>
+    <div class = "top_colum">
+      Address  주소
+    </div>
+    <div class = "top_colum">
+      Phone 연락처
+    </div>
+    <div class = "top_colum" >
+      Feature 특징
+    </div>
+    <div class = "top_colum">
+      IMG 경로
+    </div>
+    <div class = "top_colum">
+      LNG 값 경도
+    </div>
+    <div class = "top_colum">
+      LAT 값 위도
+    </div>
+    <div class = "top_colum">
+      Created_at
+    </div>
+    <div class = "clear">
+    </div>
+  </div>
+  <% @posts.each do |x|%>
+  <div class= "each_post">
+    <div class = "each_colum" style="background-color:gray; width:2% !important;">
+      <%=x.id%>
+    </div>
+    <div class = "each_colum">
+      <%=x.name%>
+    </div>
+    <div class = "each_colum">
+      <%=x.category%>
+    </div>
+    <div class = "each_colum">
+      <%=x.detail_category%>
+    </div>
+    <div class = "each_colum">
+      <%=x.location%>
+    </div>
+    <div class = "each_colum">
+      <%=x.address%>
+    </div>
+    <div class = "each_colum">
+      <%=x.phone%>
+    </div>
+    <div class = "each_colum">
+      <%=x.feature%>
+    </div>
+    <div class = "each_colum">
+      <%=x.img_url%>
+    </div>
+    <div class = "each_colum">
+      <%=x.lng%>
+    </div>
+    <div class = "each_colum">
+      <%=x.lat%>
+    </div>
+    <div class = "each_colum">
+      <%=x.created_at%>
+    </div>
+    <div class = "button">
+      <a href = "/home/modify/<%=x.id%>"> 수정</a>
+      <br>
+      <a href= "/home/delete/<%=x.id%>"> 삭제</a>
+    </div>
+    <div class = "clear">
+    </div>
+  </div>
+<%end%>
+</div>

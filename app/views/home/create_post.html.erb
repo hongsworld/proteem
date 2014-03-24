@@ -1,0 +1,130 @@
+<style>
+div{
+  word-break:break-all;
+}
+div.clear{
+  clear:both; 
+}
+div.wrap{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+div.each_post{
+  position:relative;
+  width:100%;
+  height:200px;
+  border: 1px solid #333;
+  
+}
+
+div.each_colum{
+  position:relative;
+  float:left;
+  width:8%;
+  height:100%;
+  line-height:100%;
+  text-align:center;
+  overflow:hidden;
+}
+div.button{
+  position:relative;
+  float:left;
+  width:3%;
+  height:100%;
+  background-color:#f1cdcc;
+  overflow:hidden;
+}
+div.top{
+  position:relative;
+  width:100%;
+  height:100px;
+}
+div.top_colum{
+  position:relative;
+  float:left;
+  width:8%;
+  height:100%;
+  line-height:auto;
+  text-align:center;
+  overflow:hidden;
+}
+</style>
+
+<div class = "wrap">
+  <div class = "top">
+    <div class = "top_colum">
+      NAME
+    </div>
+    <div class = "top_colum" >
+      CATEGORY(1:먹고 마시기 2: 놀기 3: 운동시설 4:기타)
+    </div>
+    <div class = "top_colum">
+      Detail Category
+    </div>
+    <div class = "top_colum" >
+      Location (1,2,3,4,5,6 - 동)
+    </div>
+    <div class = "top_colum">
+      Address  주소
+    </div>
+    <div class = "top_colum">
+      Phone 연락처
+    </div>
+    <div class = "top_colum" >
+      Feature 특징
+    </div>
+    <div class = "top_colum">
+      IMG 경로
+    </div>
+    <div class = "top_colum">
+      LNG 값 경도
+    </div>
+    <div class = "top_colum">
+      LAT 값 위도
+    </div>
+    <div class = "clear">
+    </div>
+  </div>
+    <div class= "each_post">
+  <form action = "/home/create_post_process" method="POST">
+    <div class = "each_colum">
+      <input name="name">
+    </div>
+    <div class = "each_colum">
+      <input name="category">
+    </div>
+    <div class = "each_colum">
+      <input name="detail_category">
+    </div>
+    <div class = "each_colum">
+      <input name="location">
+    </div>
+    <div class = "each_colum">
+      <input name="address">
+    </div>
+    <div class = "each_colum">
+      <input name="phone">
+    </div>
+    <div class = "each_colum">
+      <textarea name="feature" style="width:100%; height:100%; position:relative;"></textarea>
+    </div>
+    <div class = "each_colum">
+      <input name="img_url">
+    </div>
+    <div class = "each_colum">
+      <input name="lng">
+    </div>
+    <div class = "each_colum">
+      <input name="lat">
+    </div>
+    <div class = "button">
+      <input type="submit">
+    </div>
+    <div class = "clear">
+    </div>
+  </form>
+  </div>
+</div>

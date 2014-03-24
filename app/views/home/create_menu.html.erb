@@ -1,0 +1,11 @@
+<%=@post.name%> 의 메뉴 등록
+<br>
+<form action = "/home/create_menu_process/<%=@post.id%>" method = "POST">
+제목 :  <input name = "menu">
+<br>
+가격 :  <input name = "price">
+<br>
+이미지경로 :  <input name = "img_url">
+<br>
+<input type="submit">
+</form>

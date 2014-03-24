@@ -1,0 +1,179 @@
+<style>
+div{
+  word-break:break-all;
+}
+div.clear{
+  clear:both; 
+}
+div.wrap{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+div.each_post{
+  position:relative;
+  width:100%;
+  height:200px;
+  border: 1px solid #333;
+  
+}
+
+div.each_colum{
+  position:relative;
+  float:left;
+  width:8%;
+  height:100%;
+  line-height:100%;
+  text-align:center;
+  overflow:hidden;
+}
+div.button{
+  position:relative;
+  float:left;
+  width:3%;
+  height:100%;
+  background-color:#f1cdcc;
+  overflow:hidden;
+}
+div.top{
+  position:relative;
+  width:100%;
+  height:100px;
+}
+div.top_colum{
+  position:relative;
+  float:left;
+  width:8%;
+  height:100%;
+  line-height:auto;
+  text-align:center;
+  overflow:hidden;
+}
+</style>
+
+<div class = "wrap">
+  <div class = "top">
+    <div class = "top_colum" style="background-color:gray;">
+      ID
+    </div>
+    <div class = "top_colum">
+      NAME
+    </div>
+    <div class = "top_colum" >
+      CATEGORY(1:먹고 마시기 2: 놀기 3: 운동시설 4:기타)
+    </div>
+    <div class = "top_colum">
+      Detail Category
+    </div>
+    <div class = "top_colum" >
+      Location (1,2,3,4,5,6 - 동)
+    </div>
+    <div class = "top_colum">
+      Address  주소
+    </div>
+    <div class = "top_colum">
+      Phone 연락처
+    </div>
+    <div class = "top_colum" >
+      Feature 특징
+    </div>
+    <div class = "top_colum">
+      IMG 경로
+    </div>
+    <div class = "top_colum">
+      LNG 값 경도
+    </div>
+    <div class = "top_colum">
+      LAT 값 위도
+    </div>
+    <div class = "top_colum">
+      Created_at
+    </div>
+    <div class = "clear">
+    </div>
+  </div>
+  <div class= "each_post">
+    <form action= "/home/modify_process/<%=@posts.id%>" method="POST">
+    <div class = "each_colum" style="background-color:gray;">
+      <%=@posts.id%>
+    </div>
+    <div class = "each_colum">
+      <input name="name" value="<%=@posts.name%>">
+    </div>
+    <div class = "each_colum">
+      <input name="category" value="<%=@posts.category%>">
+    </div>
+    <div class = "each_colum">
+      <input name="detail_category" value="<%=@posts.detail_category%>">
+    </div>
+    <div class = "each_colum">
+      <input name="location" value="<%=@posts.location%>">
+    </div>
+    <div class = "each_colum">
+      <input name="address" value="<%=@posts.address%>">
+    </div>
+    <div class = "each_colum">
+      <input name="phone" value="<%=@posts.phone%>">
+    </div>
+    <div class = "each_colum">
+      <textarea name="feature" style="width:100%; height:100%; position:relative;"><%=@posts.feature%></textarea>
+    </div>
+    <div class = "each_colum">
+      <input name="img_url" value="<%=@posts.img_url%>">
+    </div>
+    <div class = "each_colum">
+      <input name="lng" value="<%=@posts.lng%>">
+    </div>
+    <div class = "each_colum">
+      <input name="lat" value="<%=@posts.lat%>">
+    </div>
+    <div class = "each_colum">
+      <%=@posts.created_at%>
+    </div>
+    <div class = "button">
+      <input type="submit" value="수정">
+    </div>
+    <div class = "clear">
+    </div>
+  </form>
+  </div>
+  <br>
+  <br>
+  <a href = "/home/create_menu/<%=@posts.id%>"> 메뉴 생성 </a>
+  <div class = "top">
+    <div class = "top_colum" style="width:30%; !important">
+      Menu
+    </div>
+    <div class = "top_colum" style="width:30%; !important">
+      Price
+    </div>
+    <div class = "top_colum" style="width:30%; !important">
+      img_url
+    </div>
+    <div class ="clear">
+    </div>
+  </div>
+  <%@posts.menus.each do |m|%>
+    <div class = "each_post">
+      <div class = "each_colum" style="width:30%; !important">
+        <%=m.menu%>
+      </div>
+      <div class = "each_colum" style="width:30%; !important">
+        <%=m.price%>
+      </div>
+      <div class = "each_colum" style="width:30%; !important">
+        <%=m.img_url%>
+      </div>
+    <div class = "button" style="width:8% !important;">
+      <a href = "/home/modify_menu/<%=m.id%>"> 수정</a>
+      <br>
+      <a href= "/home/delete_menu/<%=m.id%>"> 삭제</a>
+    </div>
+      <div class = "clear">
+      </div>
+    
+    </div>
+  <% end%>
+</div>
